@@ -10,8 +10,6 @@ jobs:
     runs-on: self-hosted
     timeout-minutes: 20
     steps:
-      - name: Restart all containers
-        run: docker rm -f $(docker ps -a -q) && docker volume rm $(docker volume ls -q)
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: Make backend envfile
